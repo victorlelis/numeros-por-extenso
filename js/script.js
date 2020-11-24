@@ -48,12 +48,23 @@ function changeNumbers() {
 
   if (number.value <= 19) {
     long.value = numbers[number.value];
-  } else if (number.value >= 20 && number.value <= 99) {
+  } else if (number.value >= 20 && number.value <= 100) {
     long.value = number.value[1] != 0 ? `${numbers[number.value[0] + 0]} e ${numbers[number.value[1]]}` : numbers[number.value];
-  } else if (number.value >= 100 && number.value <= 999) {
-
-    if (number.value[1] != 0 && number.value[2] != 0) {
+  } else if (number.value >= 101 && number.value <= 199) {
+    if (number.value[1] == 0 && number.value[2] != 0) {
+      long.value = `${numbers[101]} e ${numbers[number.value[2]]}`;
+    } else if (number.value[1] != 0 && number.value[2] == 0) {
+      long.value = `${numbers[101]} e ${numbers[number.value[1] + 0]}`;
+    } else if (number.value[1] == 1) {
+      long.value = `${numbers[101]} e ${numbers[number.value[1] + number.value[2]]}`;
+    } else {
+      long.value = `${numbers[101]} e ${numbers[number.value[1] + 0]} e ${numbers[number.value[2]]}`;
+    }
+  } else if (number.value >= 200 && number.value <= 999) {
+    if (number.value[1] != 0 && number.value[2] != 0 && number.value[1] != 1) {
       long.value = `${numbers[number.value[0] + 0 + 0]} e ${numbers[number.value[1] + 0]} e ${numbers[number.value[2]]}`;
+    } else if (number.value[1] == 1 && number.value[2] != 0) {
+      long.value = `${numbers[number.value[0] + 0 + 0]} e ${numbers[number.value[1] + number.value[2]]}`;
     } else if (number.value[1] == 0 && number.value[2] != 0) {
       long.value = `${numbers[number.value[0] + 0 + 0]} e ${numbers[number.value[2]]}`;
     } else if (number.value[1] != 0 && number.value[2] == 0) {
