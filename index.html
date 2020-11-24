@@ -5,10 +5,29 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Números por extenso</title>
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
 
+  <div class="container">
+    <div class="box">
+      <div class="title">Números por extenso</div>
+      <div class="content">
+        <label for="number">Escolha um número entre 0 e 999:</label>
+        <input id="number" type="range" min="0" max="999">
+        <label for="current">Número atual:</label>
+        <input id="current" type="input" disabled>
+        <label for="long">Número por extenso:</label>
+        <input id="long" type="input" disabled>
+      </div>
+    </div>
+  </div>
+
+
+  <script defer src="js/script.js"></script>
 </body>
 
 </html>
